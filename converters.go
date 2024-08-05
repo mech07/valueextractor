@@ -25,8 +25,7 @@ func ReturnStringArray(ec *Extractor, key string) *[]string {
 	ec.With(key, AsString(&str))
 	keys := strings.Split(str, ",")
 	for _, k := range keys {
-		ec.With(k, AsString(&str))
-		s = append(s, str)
+		s = append(s, k)
 	}
 	return &s
 }
